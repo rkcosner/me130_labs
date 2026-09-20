@@ -16,3 +16,8 @@ inverted_pendulum_lab/controller_solution.cpp
 # Python bytecode
 __pycache__/
 *.pyc
+
+# colcon workspace artifacts
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
