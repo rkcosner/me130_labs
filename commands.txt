@@ -1,0 +1,23 @@
+Install GPIO Development Package:
+sudo apt update
+sudo apt install build-essential cmake gpiod libgpiod-dev
+
+Motor Characterization:
+mkdir build
+cd build
+
+cmake ..
+make -j4
+
+Setting pwm config on Rpi:
+sudo nano /boot/firmware/config.txt
+dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2
+
+eigen related stuff:
+sudo apt update
+sudo apt install libeigen3-dev
+
+for pandas and matplotlib:
+sudo apt install python3-pip
+pip install pandas matplotlib
+(only if the one above doesnt work) sudo apt install python3-pandas python3-matplotlib

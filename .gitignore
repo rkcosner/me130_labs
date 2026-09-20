@@ -1,0 +1,18 @@
+# CMake build trees (also stale caches copied from other machines)
+build/
+
+# Data and plots produced by the labs -- regenerate by rerunning the tests
+full_*.csv
+steps_*.csv
+sweep_*.csv
+manual_*.csv
+trajectory_*.csv
+motor_characterization*.csv
+*.png
+
+# Reference solution -- kept out of the shared repo
+inverted_pendulum_lab/controller_solution.cpp
+
+# Python bytecode
+__pycache__/
+*.pyc

@@ -1,0 +1,146 @@
+SLOW DECAY:
+Direction 1:
+Run 1
+------------------------------------
+RESULT direction 1
+Breakaway duty = 0.15
+Stop duty      = 0.05
+Deadband width = 0.1
+------------------------------------
+Run 2
+------------------------------------
+RESULT direction 1
+Breakaway duty = 0.15
+Stop duty      = 0.05
+Deadband width = 0.1
+------------------------------------
+Run 3
+------------------------------------
+RESULT direction 1
+Breakaway duty = 0.1
+Stop duty      = 0.05
+Deadband width = 0.05
+------------------------------------
+
+
+Direction 2:
+Run 1
+------------------------------------
+RESULT direction -1
+Breakaway duty = 0.1
+Stop duty      = 0.05
+Deadband width = 0.05
+------------------------------------
+Run 2
+------------------------------------
+RESULT direction -1
+Breakaway duty = 0.1
+Stop duty      = 0.05
+Deadband width = 0.05
+------------------------------------
+Run 3
+------------------------------------
+RESULT direction -1
+Breakaway duty = 0.1
+Stop duty      = 0.05
+Deadband width = 0.05
+------------------------------------
+
+FAST DECAY:
+DIRECTION 1:
+Run 1
+------------------------------------
+RESULT direction 1
+Breakaway duty = 0.6
+Stop duty      = 0.5
+Deadband width = 0.1
+------------------------------------
+Run 2
+------------------------------------
+RESULT direction 1
+Breakaway duty = 0.55
+Stop duty      = 0.5
+Deadband width = 0.05
+------------------------------------
+Run 3
+------------------------------------
+RESULT direction 1
+Breakaway duty = 0.55
+Stop duty      = 0.5
+Deadband width = 0.05
+------------------------------------
+
+DIRECTION 2:
+Run 1
+------------------------------------
+RESULT direction -1
+Breakaway duty = 0.6
+Stop duty      = 0.5
+Deadband width = 0.1
+------------------------------------
+Run 2
+------------------------------------
+RESULT direction -1
+Breakaway duty = 0.55
+Stop duty      = 0.5
+Deadband width = 0.05
+------------------------------------
+Run 3
+------------------------------------
+RESULT direction -1
+Breakaway duty = 0.55
+Stop duty      = 0.5
+Deadband width = 0.05
+------------------------------------
+
+
+| Mode       | Direction | Mean breakaway | Mean stop |
+| ---------- | --------: | -------------: | --------: |
+| Slow decay |        +1 |      **0.133** |  **0.05** |
+| Slow decay |        -1 |      **0.100** |  **0.05** |
+| Fast decay |        +1 |      **0.567** |  **0.50** |
+| Fast decay |        -1 |      **0.567** |  **0.50** |
+
+
+rpi-imu connections:
+GY-521          Raspberry Pi 4
+--------------------------------
+VCC   --------> 3.3 V
+GND   --------> GND
+SDA   --------> GPIO2 / physical pin 3
+SCL   --------> GPIO3 / physical pin 5
+
+pendulum in pwm-dir mode
+| Raspberry Pi            | BD65496MUV   | Purpose             |
+| ----------------------- | ------------ | ------------------- |
+| GPIO18, physical pin 12 | **INA**      | 20 kHz hardware PWM |
+| GPIO23, physical pin 16 | **INB**      | Direction           |
+| GPIO24, physical pin 18 | **PS**       | Enable / coast      |
+| 3.3 V                   | **PWM/MODE** | HIGH → EN/IN mode   |
+| 3.3 V                   | **VCC**      | Driver logic power  |
+| GND                     | **GND**      | Common ground       |
+| GPIO17, pin 11          | Encoder A    | Quadrature encoder  |
+| GPIO27, pin 13          | Encoder B    | Quadrature encoder  |
+| Motor PSU +             | VIN          | Motor supply        |
+| Motor PSU −             | GND          | Common with Pi GND  |
+| Motor                   | OUTA / OUTB  | Motor terminals     |
+
+
+
+Dual Motor Characterization:
+Forward
+========================================
+CHARACTERIZATION RESULTS
+========================================
+LEFT
+  breakaway = 0.150
+  stop      = 0.050
+  deadband  = 0.100
+
+RIGHT
+  breakaway = 0.150
+  stop      = 0.050
+  deadband  = 0.100
+========================================
+
+Reverse
